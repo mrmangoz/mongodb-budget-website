@@ -1,0 +1,36 @@
+<form method="POST">
+	<h1>Review JSON</h1>
+	<input type="button" onClick="window.location.href='/index'" value="Go back"/>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">stats</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Current Week</td>
+				<td>Current Month</td>
+			</tr>
+			<tr>
+				<td><pre>{{week_days_string}}</pre></td>
+				<td><pre>{{month_days_string}}</pre></td>
+			</tr>
+		<tbody>
+	</table>
+	<select id = "current_week_list" >
+		{% for day in week_list %}
+		<option id={{loop.index}} value = "{{day[0]}}" SELECTED>{{day[0]}}</option>
+		{% endfor %}
+	</select>
+	<select id = "current_month_list" >
+		{% for day in month_list %}
+		<option id={{loop.index}} value = "{{day[0]}}" SELECTED>{{day[0]}}</option>
+		{% endfor %}
+	</select>
+	
+	<!-- <label for="currrent week">Current Week: </label>
+	<body> <pre>{{week_days_string}}</pre> </body><br> -->
+	
+	
+</form>
