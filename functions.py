@@ -1,6 +1,6 @@
 import pymongo, datetime
 
-client = pymongo.MongoClient('192.168.68.113', 27017)
+client = pymongo.MongoClient()
 db = client.budget
 current_week = db.current_week
 
