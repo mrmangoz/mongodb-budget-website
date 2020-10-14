@@ -90,7 +90,7 @@ def form():
     #current_month_json = functions.load_json_obj("current_month.json")
     #day = len(current_week_json["Days"]) - 1
 
-    try:
+    '''try:
         #print(request.form['UCT_lunch'], "UCT lunch")
         UCT_lunch += float(request.form['UCT_lunch'])
         #current_week_json["Days"][day]["UCT_lunch"] = str(UCT_lunch)
@@ -113,5 +113,5 @@ def form():
     #functions.append_month(current_week_json, current_month_json)
     #print(current_month_json)
     #functions.write_json(current_month_json, "current_month.json")
-    #return render_template('index.html', lunch=output_lunch, party=output_party, out=output_out)
+    #return render_template('index.html', lunch=output_lunch, party=output_party, out=output_out)'''
     return render_template('index.html')
