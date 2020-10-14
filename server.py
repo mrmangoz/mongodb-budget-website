@@ -13,7 +13,7 @@ totals = {
           'week': 750,
           'month': 3000
 }
-#functions.insertCurrentWeek(50, 100, 75)
+functions.insertCurrentWeek(50, 100, 75)
 #client = pymongo.MongoClient()
 #db = client.budget
 #current_week = db.current_week
