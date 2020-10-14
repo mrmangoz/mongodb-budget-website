@@ -23,4 +23,6 @@ def runningTotals():
     cursor = current_week.find()
     for document in cursor:
         lunch += document["UCT_lunch"]
-    return lunch
+        party += document["party_beers"]
+        out_about += document["out_about"]
+    return lunch, party, out_about

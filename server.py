@@ -89,14 +89,15 @@ def submit():
 @app.route('/index', methods=['GET', 'POST'])
 def form():
     #form_values = []
-    #running_totals = functions.weekly_spendature()
+    running_totals = functions.runningTotals()
+    print(functions.runningTotals())
     UCT_lunch = 0
     party_beers = 0
     out_about = 0
     #current_week_json = functions.load_json_obj("current_week.json")
     #current_month_json = functions.load_json_obj("current_month.json")
     #day = len(current_week_json["Days"]) - 1
-    print(functions.runningTotals())
+
     try:
         #print(request.form['UCT_lunch'], "UCT lunch")
         UCT_lunch += float(request.form['UCT_lunch'])
@@ -113,12 +114,12 @@ def form():
         #current_week_json["Days"][day]["out_about"] = str(out_about)
     except:
         pass
-    output_lunch = totals['lunch'] - UCT_lunch #- running_totals[0]
-    output_party = totals['party'] - party_beers #- running_totals[1]
-    output_out = totals['out'] - out_about #- running_totals[2]
+    output_lunch = totals['lunch'] - UCT_lunch - running_totals[0]
+    output_party = totals['party'] - party_beers - running_totals[1]
+    output_out = totals['out'] - out_about - running_totals[2]
     #functions.write_json(current_week_json, "current_week.json")
     #functions.append_month(current_week_json, current_month_json)
     #print(current_month_json)
     #functions.write_json(current_month_json, "current_month.json")
-    #return render_template('index.html', lunch=output_lunch, party=output_party, out=output_out)
-    return render_template('index.html')
+    return render_template('index.html', lunch=output_lunch, party=output_party, out=output_out)
+    #return render_template('index.html')
