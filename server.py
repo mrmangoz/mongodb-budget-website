@@ -91,6 +91,7 @@ def form():
     #form_values = []
     running_totals = functions.runningTotals()
     print(functions.runningTotals())
+    print(functions.checkCurrentWeek())
     UCT_lunch = 0
     party_beers = 0
     out_about = 0

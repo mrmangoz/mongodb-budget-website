@@ -26,3 +26,9 @@ def runningTotals():
         party += document["party_beers"]
         out_about += document["out_about"]
     return lunch, party, out_about
+
+def checkCurrentWeek():
+    if current_week.find() == {}:
+        return False
+    else:
+        return True
