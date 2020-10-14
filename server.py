@@ -118,7 +118,7 @@ def form():
     output_lunch = totals['lunch'] - UCT_lunch - running_totals[0]
     output_party = totals['party'] - party_beers - running_totals[1]
     output_out = totals['out'] - out_about - running_totals[2]
-    if UCT_lunch != 0 and party_beers != 0 and out_about != 0:
+    if UCT_lunch != 0 or party_beers != 0 or out_about != 0:
         functions.insertCurrentWeek(UCT_lunch, party_beers, out_about)
     #functions.write_json(current_week_json, "current_week.json")
     #functions.append_month(current_week_json, current_month_json)
