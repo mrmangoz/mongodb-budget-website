@@ -82,7 +82,10 @@ def review_json():
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
+
     return render_template('submit.html')
+
+
 @app.route('/index', methods=['GET', 'POST'])
 def form():
     #form_values = []
@@ -93,8 +96,8 @@ def form():
     #current_week_json = functions.load_json_obj("current_week.json")
     #current_month_json = functions.load_json_obj("current_month.json")
     #day = len(current_week_json["Days"]) - 1
-
-    '''try:
+    print(functions.runningTotals())
+    try:
         #print(request.form['UCT_lunch'], "UCT lunch")
         UCT_lunch += float(request.form['UCT_lunch'])
         #current_week_json["Days"][day]["UCT_lunch"] = str(UCT_lunch)
@@ -117,5 +120,5 @@ def form():
     #functions.append_month(current_week_json, current_month_json)
     #print(current_month_json)
     #functions.write_json(current_month_json, "current_month.json")
-    #return render_template('index.html', lunch=output_lunch, party=output_party, out=output_out)'''
+    #return render_template('index.html', lunch=output_lunch, party=output_party, out=output_out)
     return render_template('index.html')

@@ -14,3 +14,13 @@ def insertCurrentWeek(lunch,party_beers,out_about):
                          "party_beers" : party_beers,
                          "out_about" : out_about
     })
+
+
+def runningTotals():
+    lunch = 0
+    party = 0
+    out_about = 0
+    cursor = current_week.find()
+    for document in cursor:
+        lunch += document.UCT_lunch
+    return lunch
