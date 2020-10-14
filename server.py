@@ -13,7 +13,7 @@ totals = {
           'week': 750,
           'month': 3000
 }
-functions.insertCurrentWeek(50, 100, 75)
+#functions.insertCurrentWeek(50, 100, 75)
 #client = pymongo.MongoClient()
 #db = client.budget
 #current_week = db.current_week
@@ -79,6 +79,10 @@ def review_json():
 
     return render_template('review-json.html', week_days_string=week_days, month_days_string=month_days, week_list=week_days_list, month_list=month_days_list)
 '''
+
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    return render_template('submit.html')
 @app.route('/index', methods=['GET', 'POST'])
 def form():
     #form_values = []
